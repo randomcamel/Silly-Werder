@@ -1,0 +1,9 @@
+
+*** 0.03 (Aug 31 2000)
+
+Fixed bugs in the module that was causing it to use class data for object
+methods.  Also fixed set_* functions to allow Silly::Werder::set_*(); syntax
+
+*** 0.02 (Aug 28 2000)
+
+First public version of Silly::Werder

@@ -1,0 +1,45 @@
+Werder - Meaningless gibberish generator
+----------------------------------------
+
+This module is used to create pronouncable yet completely meaningless 
+language.  It is good for sending to a text-to-speech program 
+(ala festival), generating passwords, annoying people on irc, and all 
+kinds of fun things.
+
+
+Sample code:
+
+  use Silly::Werder;
+
+  my $foo = new Silly::Werder;
+
+  # Set the min and max number of werds per line  $foo->set_werds_num(5, 9);
+
+  # Set the min and max # of syllables per werd
+  $foo->set_syllables_num(3, 7);
+
+  # Set the percentage of the time a werd will start with a consonant
+  $foo->set_cons_weight(75);
+
+  # Return a random sentence, question, or exclaimation
+  $line = $foo->line;
+
+  $sentence = $foo->sentence;
+  $question = $foo->question;
+  $question = $foo->exclaimation;
+
+  # Generate a long random sentence calling as a class method
+  Silly::Werder->set_werds_num(10,20);
+  print Silly::Werder->line;
+
+  # All of the above methods can be used as either class methods
+  # or object methods.
+
+
+
+Werder was created and implemented by Dave Olszewski, aka cxreg.  You 
+can send comments, suggestions, flames, or love letters to 
+dave.olszewski@osdn.com
+
+
+This code is distributed under the GPL.  See COPYING for details.
