@@ -1,4 +1,14 @@
 
+*** 0.90 (May 17, 2002)
+
+* Complete rewrite of engine.  See pod for details.
+* set_cons_weight is now obsolete.  it is kept for compatibility but is a
+    null operation 
+* Fixed spelling of exclamation in API
+* Fixed misspelling of "source" as "souce" in the docs
+* Allow a single werd as output from get_werd
+* Updated email address
+
 *** 0.03 (Aug 31 2000)
 
 Fixed bugs in the module that was causing it to use class data for object

@@ -1,45 +1,56 @@
 Werder - Meaningless gibberish generator
 ----------------------------------------
 
-This module is used to create pronouncable yet completely meaningless 
-language.  It is good for sending to a text-to-speech program 
-(ala festival), generating passwords, annoying people on irc, and all 
-kinds of fun things.
+This module is used to create pronounceable yet completely
+meaningless language.  It is good for sending to a text-
+to-speech program (ala festival), generating passwords,
+annoying people on irc, and all kinds of fun things.
+
+This new release is a full rewrite of the engine.  It is
+based on grammar files derived from real text of real lan­
+guages.  Several grammars are provided for you to use, and
+you can also create your own.
 
 
 Sample code:
 
   use Silly::Werder;
 
-  my $foo = new Silly::Werder;
+  my $werds = new Silly::Werder;
 
-  # Set the min and max number of werds per line  $foo->set_werds_num(5, 9);
+  # Set the min and max number of werds per line
+  $werds->set_werds_num(5, 9);
 
   # Set the min and max # of syllables per werd
-  $foo->set_syllables_num(3, 7);
+  $werds->set_syllables_num(3, 7);
 
-  # Set the percentage of the time a werd will start with a consonant
-  $foo->set_cons_weight(75);
+  # End the sentences in a newline
+  $werds->end_with_newline(1);
 
-  # Return a random sentence, question, or exclaimation
-  $line = $foo->line;
+  # Set the language to mimic
+  $werds->set_language(English, small);
 
-  $sentence = $foo->sentence;
-  $question = $foo->question;
-  $question = $foo->exclaimation;
+  # Return a random sentence, question, or exclamation
+  $line = $werds->line;
+
+  $sentence    = $werds->sentence;
+  $question    = $werds->question;
+  $exclamation = $werds->exclamation;
+
+  # Get a single werd
+  $werd = $werds->get_werd;
 
   # Generate a long random sentence calling as a class method
   Silly::Werder->set_werds_num(10,20);
   print Silly::Werder->line;
 
-  # All of the above methods can be used as either class methods
+  # All of the methods can be used as either class methods
   # or object methods.
-
 
 
 Werder was created and implemented by Dave Olszewski, aka cxreg.  You 
 can send comments, suggestions, flames, or love letters to 
-dave.olszewski@osdn.com
+dave.o@pobox.com
 
 
 This code is distributed under the GPL.  See COPYING for details.
